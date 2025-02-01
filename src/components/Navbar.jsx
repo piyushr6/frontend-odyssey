@@ -27,7 +27,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-2 py-4 flex items-center">
         {/* Logo - Pushed to the left */}
         <a href="#" className="text-2xl font-bold mr-auto">
-          MyApp
+          Bistro SPIT
         </a>
 
         {/* Navigation Links - Centered Vertically */}
@@ -56,10 +56,10 @@ export default function Navbar() {
           <div className="">
             {/* Login & Signup Buttons */}
             <button className="mx-2 px-4 py-2 border border-gray-700 dark:border-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition">
-              Login
+              Login as Student/Staff
             </button>
             <button className="mx-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-              Signup
+              Login as Mess administrator
             </button>
           </div>
         </div>
