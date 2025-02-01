@@ -18,14 +18,13 @@ function Home() {
 
         {/* Content Wrapper */}
         <div className="relative z-10 px-4 max-w-8xl mx-auto p-6 rounded-lg">
-          <h1 className="text-7xl font-bold mb-4 text-green-900
-           drop-shadow-lg" style={{ textShadow: "2px 2px 0 white, -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white" }}>
+          <h1 className="text-7xl font-bold mb-4 text-secondary">
             Welcome to the College Mess & Canteen
           </h1>
-          <h2 className="text-4xl font-bold" style={{ textShadow: "1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black" }}>
+
+          <h2 className="text-4xl font-bold">
             Savor the taste of campus life—one delicious meal at a time!
           </h2>
-
 
           <p className="text-xl mb-6 drop-shadow-md">
             Order food, track your expenses, and manage your meals effortlessly.
