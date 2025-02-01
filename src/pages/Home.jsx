@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"; // Import Link for navigation
 import heroImg from "../assets/landing-img.jpg";
 
 const Home = () => (
@@ -18,10 +19,14 @@ const Home = () => (
         Savor the taste of campus life—one delicious meal at a time!
       </p>
 
-      <button className="mt-8 px-6 py-3 bg-orange-600 text-white text-2xl font-semibold rounded-lg shadow-lg hover:bg-orange-700 transition-all duration-300 hover: cursor-pointer">
-        Order Now
-      </button>
+      {/* Link to Menu Page */}
+      <Link to="/menu">
+        <button className="mt-8 px-6 py-3 bg-orange-600 text-white text-2xl font-semibold rounded-lg shadow-lg hover:bg-orange-700 transition-all duration-300 hover: cursor-pointer">
+          Order Now
+        </button>
+      </Link>
     </div>
   </div>
 );
+
 export default Home;

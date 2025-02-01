@@ -4,6 +4,8 @@ import StaffDashboard from "./pages/StaffDashboard";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Navbar from "./components/Navbar";
+import MenuPage from "./pages/OrderMenu"; // Add the Menu Page
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/staff/*" element={<StaffDashboard />} />
+            <Route path="/menu" element={<MenuPage />} />
           </Routes>
         </main>
       </div>
