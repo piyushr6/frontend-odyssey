@@ -1,9 +1,20 @@
-const Home = () => (
-  <div className="p-6 text-center">
-    <h1 className="text-3xl font-bold">Welcome to MyApp</h1>
-    <p className="mt-2 text-gray-600">
-      A boilerplate for Vite + React + Tailwind
-    </p>
-  </div>
-);
-export default Home;
+import { Routes, Route } from "react-router-dom";
+import Sidebar from "../components/Sidebar";
+import StockPage from "./StockPage";
+import OrdersPage from "./OrdersPage";
+import MenuPage from "./MenuPage";
+
+export default function StaffDashboard() {
+  return (
+    <div className="flex">
+      <Sidebar />
+      <div className="flex-grow p-6">
+        <Routes>
+          <Route path="stock" element={<StockPage />} />
+          <Route path="orders" element={<OrdersPage />} />
+          <Route path="menu" element={<MenuPage />} />
+        </Routes>
+      </div>
+    </div>
+  );
+}

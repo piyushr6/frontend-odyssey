@@ -6,7 +6,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="absolute top-0 left-0 w-full bg-transparent text-gray-900 shadow-none z-20">
+    <nav className=" top-0 left-0 w-full bg-transparent text-gray-900 shadow-2xs z-20">
       <div className="max-w-7xl mx-auto px-2 py-4 flex items-center">
         {/* Logo - Pushed to the left */}
         <Link to="/" className="text-2xl font-bold mr-auto">
