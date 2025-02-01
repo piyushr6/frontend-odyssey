@@ -4,31 +4,31 @@ export default function UpdateMenu() {
   const [menu, setMenu] = useState([
     {
       id: 1,
-      name: "Rice Plate",
-      price: 100,
+      name: "Veg Thali",
+      price: 120,
       category: "Lunch",
       available: true,
     },
     {
       id: 2,
-      name: "Masala Dosa",
-      price: 80,
+      name: "Chole Bhature",
+      price: 100,
       category: "Breakfast",
       available: true,
     },
     {
       id: 3,
-      name: "Paneer Butter Masala",
-      price: 150,
+      name: "Aloo Paratha",
+      price: 80,
       category: "Dinner",
       available: true,
     },
     {
       id: 4,
-      name: "Cold Coffee",
-      price: 60,
+      name: "Dosa",
+      price: 90,
       category: "Beverages",
-      available: false,
+      available: true,
     },
   ]);
 
@@ -121,20 +121,18 @@ export default function UpdateMenu() {
                 {filteredMenu.map((item) => (
                   <tr
                     key={item.id}
-                    className={`border-b ${
-                      !item.available ? "bg-red-100" : ""
-                    }`}
+                    className={`border-b ${!item.available ? "bg-red-100" : ""
+                      }`}
                   >
                     <td className="px-4 py-2">{item.name}</td>
                     <td className="px-4 py-2">{item.category}</td>
                     <td className="px-4 py-2">₹{item.price}</td>
                     <td className="px-4 py-2">
                       <button
-                        className={`px-3 py-1 rounded text-sm ${
-                          item.available
-                            ? "bg-green-500 text-white"
-                            : "bg-gray-500 text-white"
-                        }`}
+                        className={`px-3 py-1 rounded text-sm ${item.available
+                          ? "bg-green-500 text-white"
+                          : "bg-gray-500 text-white"
+                          }`}
                         onClick={() => toggleAvailability(item.id)}
                       >
                         {item.available ? "Available" : "Unavailable"}

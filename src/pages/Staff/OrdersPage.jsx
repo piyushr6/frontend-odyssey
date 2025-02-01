@@ -4,26 +4,27 @@ export default function ManageOrders() {
   const [orders, setOrders] = useState([
     {
       id: 1,
-      customer: "John Doe",
-      items: "Rice, Dal",
-      total: 200,
+      customer: "Ravi Kumar",
+      items: "Veg Thali, Masala Chai",
+      total: 160,
       status: "Pending",
     },
     {
       id: 2,
-      customer: "Alice Smith",
-      items: "Roti, Sabzi",
-      total: 150,
+      customer: "Priya Sharma",
+      items: "Chole Bhature, Samosa",
+      total: 130,
       status: "Completed",
     },
     {
       id: 3,
-      customer: "Bob Johnson",
-      items: "Milk, Bread",
-      total: 100,
+      customer: "Amit Verma",
+      items: "Aloo Paratha, Pav Bhaji",
+      total: 180,
       status: "Pending",
     },
   ]);
+
   const [newOrder, setNewOrder] = useState({
     customer: "",
     items: "",
@@ -78,9 +79,8 @@ export default function ManageOrders() {
         {["All", "Pending", "Completed", "Canceled"].map((status) => (
           <button
             key={status}
-            className={`px-4 py-2 rounded ${
-              filter === status ? "bg-blue-600 text-white" : "bg-gray-200"
-            }`}
+            className={`px-4 py-2 rounded ${filter === status ? "bg-blue-600 text-white" : "bg-gray-200"
+              }`}
             onClick={() => setFilter(status)}
           >
             {status}
@@ -106,9 +106,8 @@ export default function ManageOrders() {
             {filteredOrders.map((order) => (
               <div
                 key={order.id}
-                className={`grid grid-cols-5 gap-4 items-center py-2 ${
-                  order.status === "Pending" ? "bg-yellow-100" : ""
-                } border-b`}
+                className={`grid grid-cols-5 gap-4 items-center py-2 ${order.status === "Pending" ? "bg-yellow-100" : ""
+                  } border-b`}
               >
                 <span>{order.customer}</span>
                 <span>{order.items}</span>
