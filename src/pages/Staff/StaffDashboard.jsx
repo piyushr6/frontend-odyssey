@@ -10,6 +10,8 @@ export default function StaffDashboard() {
       <Sidebar />
       <div className="flex-grow p-6">
         <Routes>
+          {/* Default route to StockPage */}
+          <Route index element={<StockPage />} />
           <Route path="stock" element={<StockPage />} />
           <Route path="orders" element={<OrdersPage />} />
           <Route path="menu" element={<MenuPage />} />

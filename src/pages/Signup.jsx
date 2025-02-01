@@ -1,8 +1,23 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Signup() {
   const [role, setRole] = useState("student");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate(); // Hook to navigate after sign-up
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Save the role and other form data in localStorage after successful sign-up
+    localStorage.setItem("role", role);
+    localStorage.setItem("email", email); // Optionally save email
+
+    // You can replace this with actual sign-up logic (API call, etc.)
+    // After successful sign-up, navigate the user to the home page
+    navigate("/");
+  };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-[var(--color-background)] px-4">
@@ -11,7 +26,7 @@ export default function Signup() {
           Sign Up
         </h2>
 
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleSubmit}>
           {/* Role Selection */}
           <div>
             <label className="block font-medium mb-1 text-[var(--color-text)]">
@@ -37,6 +52,8 @@ export default function Signup() {
               placeholder="Enter your email"
               required
               className="w-full p-2 border rounded-md focus:ring focus:ring-[var(--color-primary)]"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
@@ -50,6 +67,8 @@ export default function Signup() {
               placeholder="Enter your password"
               required
               className="w-full p-2 border rounded-md focus:ring focus:ring-[var(--color-primary)]"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 

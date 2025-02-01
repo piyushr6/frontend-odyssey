@@ -55,7 +55,7 @@ const OrderMenu = () => {
       </div>
 
       <div className="mt-8">
-        <Link to={{ pathname: "/order-summary", state: { cartItems: cart } }}>
+        <Link to="/order-summary">
           <button className="px-6 py-3 bg-orange-600 text-white text-2xl font-semibold rounded-lg hover:bg-orange-700 transition-all duration-300 cursor-pointer">
             Add to Cart
           </button>

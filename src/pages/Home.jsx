@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import heroImg from "../assets/landing-img.jpg";
+import Menu from "./OrderMenu";
 
 function Home() {
   return (
@@ -22,9 +24,11 @@ function Home() {
           <p className="text-lg mb-6 drop-shadow-md">
             Order food, track your expenses, and manage your meals effortlessly.
           </p>
-          <button className="bg-primary text-white text-lg font-semibold py-3 px-8 rounded-lg hover:bg-[#b01500] transition">
-            Order Now
-          </button>
+          <Link to="/order-menu">
+            <button className="bg-primary text-white text-lg font-semibold py-3 px-8 rounded-lg hover:bg-[#b01500] transition">
+              Order Now
+            </button>
+          </Link>
         </div>
       </section>
 

@@ -94,18 +94,25 @@ export default function ManageOrders() {
           <p className="text-gray-500">No orders found.</p>
         ) : (
           <div>
+            {/* Table Header */}
+            <div className="grid grid-cols-5 gap-4 items-center font-semibold text-lg border-b pb-2">
+              <span>Customer</span>
+              <span>Items</span>
+              <span>Total</span>
+              <span>Status</span>
+              <span>Action</span>
+            </div>
+            {/* Orders */}
             {filteredOrders.map((order) => (
               <div
                 key={order.id}
-                className={`flex justify-between items-center border-b py-2 ${
+                className={`grid grid-cols-5 gap-4 items-center py-2 ${
                   order.status === "Pending" ? "bg-yellow-100" : ""
-                }`}
+                } border-b`}
               >
-                <div>
-                  <p className="font-semibold">{order.customer}</p>
-                  <p className="text-sm text-gray-500">{order.items}</p>
-                </div>
-                <span className="font-semibold">₹{order.total}</span>
+                <span>{order.customer}</span>
+                <span>{order.items}</span>
+                <span>₹{order.total}</span>
                 <select
                   className="border rounded p-1"
                   value={order.status}
@@ -135,7 +142,7 @@ export default function ManageOrders() {
       {/* Add New Order */}
       <div className="mt-6 bg-gray-100 p-4 rounded-lg">
         <h2 className="text-xl font-semibold mb-2">Add New Order</h2>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-3 gap-4">
           <input
             type="text"
             placeholder="Customer Name"

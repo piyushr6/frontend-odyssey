@@ -4,23 +4,18 @@ import { useNavigate } from "react-router-dom";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("student"); // Default role
+  const [role, setRole] = useState("student");
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // In a real-world scenario, you'd verify credentials here
     if (email && password) {
-      // Store user role in localStorage for session
       localStorage.setItem("role", role);
-      // Redirect user based on their role
       if (role === "mess staff") {
-        navigate("/dashboard");
+        navigate("/staff-dashboard");
       } else if (role === "student") {
-        navigate("/order-food");
-      } else {
-        navigate("/");
+        navigate("/student-dashboard");
       }
     }
   };
@@ -33,7 +28,6 @@ export default function Login() {
         </h2>
 
         <form className="space-y-4" onSubmit={handleLogin}>
-          {/* Email Input */}
           <div>
             <label className="block font-medium mb-1 text-[var(--color-text)]">
               Email
@@ -48,7 +42,6 @@ export default function Login() {
             />
           </div>
 
-          {/* Password Input */}
           <div>
             <label className="block font-medium mb-1 text-[var(--color-text)]">
               Password
@@ -63,7 +56,6 @@ export default function Login() {
             />
           </div>
 
-          {/* Role Selection */}
           <div>
             <label className="block font-medium mb-1 text-[var(--color-text)]">
               Role
@@ -73,13 +65,11 @@ export default function Login() {
               value={role}
               onChange={(e) => setRole(e.target.value)}
             >
-              <option value="student">Student</option>
-              <option value="staff">College Staff</option>
+              <option value="student">Student / College Staff</option>
               <option value="mess staff">Mess Staff</option>
             </select>
           </div>
 
-          {/* Login Button */}
           <button
             type="submit"
             className="w-full bg-[var(--color-primary)] text-white py-2 rounded-md hover:bg-[#b01500] transition"

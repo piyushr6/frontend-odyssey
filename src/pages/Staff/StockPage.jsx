@@ -71,19 +71,26 @@ export default function StockPage() {
           <p className="text-gray-500">No items found.</p>
         ) : (
           <div>
+            <div className="grid grid-cols-5 gap-4 items-center font-semibold text-lg border-b pb-2">
+              <span>Item</span>
+              <span>Quantity</span>
+              <span>Price per Unit</span>
+              <span>Total Value</span>
+              <span>Action</span>
+            </div>
             {filteredStock.map((item) => (
               <div
                 key={item.id}
-                className={`flex justify-between items-center border-b py-2 ${
+                className={`grid grid-cols-5 gap-4 items-center py-2 ${
                   item.quantity < 10 ? "bg-red-100" : ""
-                }`}
+                } border-b`}
               >
-                <span className="font-semibold">
+                <span>
                   {item.item} ({item.unit})
                 </span>
                 <input
                   type="number"
-                  className="border rounded p-1 text-sm w-20"
+                  className="border rounded p-1 w-20 text-sm"
                   value={item.quantity}
                   onChange={(e) =>
                     updateStock(item.id, "quantity", e.target.value)
@@ -91,15 +98,13 @@ export default function StockPage() {
                 />
                 <input
                   type="number"
-                  className="border rounded p-1 text-sm w-20"
+                  className="border rounded p-1 w-20 text-sm"
                   value={item.price}
                   onChange={(e) =>
                     updateStock(item.id, "price", e.target.value)
                   }
                 />
-                <span className="font-semibold">
-                  ₹{item.quantity * item.price}
-                </span>
+                <span>₹{item.quantity * item.price}</span>
                 <button
                   className="bg-red-500 text-white px-3 py-1 rounded text-sm"
                   onClick={() => removeStockItem(item.id)}
@@ -120,7 +125,7 @@ export default function StockPage() {
       {/* Add New Stock */}
       <div className="mt-6 bg-gray-100 p-4 rounded-lg">
         <h2 className="text-xl font-semibold mb-2">Add New Stock</h2>
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-4 gap-4">
           <input
             type="text"
             placeholder="Item Name"

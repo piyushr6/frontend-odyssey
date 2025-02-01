@@ -1,53 +1,65 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [role, setRole] = useState(localStorage.getItem("role") || "student");
+  const [role, setRole] = useState("student"); // Default role can be set here
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    setRole("student"); // Reset role to default
+    navigate("/");
+  };
 
   const renderLinks = () => {
-    if (role === "mess staff") {
-      return (
-        <>
-          <Link
-            to="/"
-            className="hover:text-gray-600 dark:hover:text-gray-300 text-[var(--color-primary)]"
-          >
-            Home
-          </Link>
-          <Link
-            to="/dashboard"
-            className="hover:text-gray-600 dark:hover:text-gray-300 text-[var(--color-primary)]"
-          >
-            Dashboard
-          </Link>
-        </>
-      );
-    } else if (role === "student") {
-      return (
-        <>
-          <Link
-            to="/"
-            className="hover:text-gray-600 dark:hover:text-gray-300 text-[var(--color-primary)]"
-          >
-            Home
-          </Link>
-          <Link
-            to="/order-food"
-            className="hover:text-gray-600 dark:hover:text-gray-300 text-[var(--color-primary)]"
-          >
-            Order Food
-          </Link>
-          <Link
-            to="/track-expenses"
-            className="hover:text-gray-600 dark:hover:text-gray-300 text-[var(--color-primary)]"
-          >
-            Track Expenses
-          </Link>
-        </>
-      );
-    }
+    return (
+      <>
+        <Link
+          to="/"
+          className="hover:text-gray-600 dark:hover:text-gray-300 text-[var(--color-primary)]"
+        >
+          Home
+        </Link>
+        <Link
+          to="/student"
+          className="hover:text-gray-600 dark:hover:text-gray-300 text-[var(--color-primary)]"
+        >
+          Student Dashboard
+        </Link>
+        <Link
+          to="/staff"
+          className="hover:text-gray-600 dark:hover:text-gray-300 text-[var(--color-primary)]"
+        >
+          Staff Dashboard
+        </Link>
+        <Link
+          to="/order-menu"
+          className="hover:text-gray-600 dark:hover:text-gray-300 text-[var(--color-primary)]"
+        >
+          Order Food
+        </Link>
+      </>
+    );
+  };
+
+  const renderAuthButtons = () => {
+    return (
+      <>
+        <Link
+          to="/login"
+          className="mx-2 px-4 py-2 border border-gray-700 dark:border-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition text-[var(--color-primary)]"
+        >
+          Login
+        </Link>
+        <Link
+          to="/signup"
+          className="mx-2 px-4 py-2 bg-[var(--color-primary)] text-white rounded-lg hover:bg-[#E65100] transition"
+        >
+          Signup
+        </Link>
+      </>
+    );
   };
 
   return (
@@ -70,18 +82,7 @@ export default function Navbar() {
 
           {/* Login & Signup Buttons */}
           <div className="hidden md:flex items-center space-x-6 ml-8">
-            <Link
-              to="/login"
-              className="mx-2 px-4 py-2 border border-gray-700 dark:border-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition text-[var(--color-primary)]"
-            >
-              Login
-            </Link>
-            <Link
-              to="/signup"
-              className="mx-2 px-4 py-2 bg-[var(--color-primary)] text-white rounded-lg hover:bg-[#E65100] transition"
-            >
-              Signup
-            </Link>
+            {renderAuthButtons()}
           </div>
 
           {/* Mobile Menu Button */}
@@ -98,18 +99,7 @@ export default function Navbar() {
           <div className="md:hidden absolute top-0 left-0 w-full flex flex-col items-start space-y-4 py-4 bg-gray-100 z-10">
             {/* Login & Signup Buttons - Positioned at top left */}
             <div className="absolute top-4 left-4 flex space-x-4">
-              <Link
-                to="/login"
-                className="px-4 py-2 border border-gray-700 dark:border-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition text-[var(--color-primary)]"
-              >
-                Login
-              </Link>
-              <Link
-                to="/signup"
-                className="px-4 py-2 bg-[var(--color-primary)] text-black rounded-lg hover:bg-[#E65100] transition"
-              >
-                Signup
-              </Link>
+              {renderAuthButtons()}
             </div>
 
             {/* Navigation Links - Start after the buttons */}
