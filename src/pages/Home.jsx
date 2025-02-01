@@ -1,7 +1,13 @@
+import heroImg from "../assets/landing-img.jpg";
+
 const Home = () => (
   <div className="relative w-screen h-screen">
     {/* Background Image with Opacity */}
-    <img className="absolute inset-0 w-full h-full object-cover opacity-90 z-0" src="./landing-img.jpg" alt="landing" />
+    <img
+      className="absolute inset-0 w-full h-full object-cover opacity-90 z-0"
+      src={heroImg}
+      alt="landing"
+    />
 
     {/* Overlay Text */}
     <div className="absolute top-1/3 left-10 text-white z-10">
@@ -15,11 +21,7 @@ const Home = () => (
       <button className="mt-8 px-6 py-3 bg-orange-600 text-white text-2xl font-semibold rounded-lg shadow-lg hover:bg-orange-700 transition-all duration-300 hover: cursor-pointer">
         Order Now
       </button>
-
     </div>
   </div>
-
-
-
 );
 export default Home;
