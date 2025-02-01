@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-// import About from "./pages/About";
+import StaffDashboard from "./pages/StaffDashboard";
+import Login from "./pages/Login"; // Import Login Page
+import Signup from "./pages/Signup"; // Import Signup Page
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -13,7 +15,9 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/about" element={<About />} /> */}
+            <Route path="/staff" element={<StaffDashboard />} />
+            <Route path="/login" element={<Login />} /> {/* Login Page */}
+            <Route path="/signup" element={<Signup />} /> {/* Signup Page */}
           </Routes>
         </main>
         <Footer />

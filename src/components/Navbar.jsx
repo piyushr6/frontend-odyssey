@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -26,21 +27,27 @@ export default function Navbar() {
     <nav className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-md relative">
       <div className="max-w-7xl mx-auto px-2 py-4 flex items-center">
         {/* Logo - Pushed to the left */}
-        <a href="#" className="text-2xl font-bold mr-auto">
+        <Link to="/" className="text-2xl font-bold mr-auto">
           Bistro SPIT
-        </a>
+        </Link>
 
         {/* Navigation Links - Centered Vertically */}
         <div className="hidden md:flex space-x-6 items-center">
-          <a href="#" className="hover:text-gray-600 dark:hover:text-gray-300">
+          <Link to="/" className="hover:text-gray-600 dark:hover:text-gray-300">
             Home
-          </a>
-          <a href="#" className="hover:text-gray-600 dark:hover:text-gray-300">
+          </Link>
+          <Link
+            to="/about"
+            className="hover:text-gray-600 dark:hover:text-gray-300"
+          >
             About
-          </a>
-          <a href="#" className="hover:text-gray-600 dark:hover:text-gray-300">
+          </Link>
+          <Link
+            to="/contact"
+            className="hover:text-gray-600 dark:hover:text-gray-300"
+          >
             Contact
-          </a>
+          </Link>
         </div>
 
         {/* Dark Mode Toggle, Login & Signup Buttons */}
@@ -55,12 +62,18 @@ export default function Navbar() {
 
           <div className="">
             {/* Login & Signup Buttons */}
-            <button className="mx-2 px-4 py-2 border border-gray-700 dark:border-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition">
-              Login as Student/Staff
-            </button>
-            <button className="mx-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-              Login as Mess administrator
-            </button>
+            <Link
+              to="/login"
+              className="mx-2 px-4 py-2 border border-gray-700 dark:border-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition"
+            >
+              Login
+            </Link>
+            <Link
+              to="/signup"
+              className="mx-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+            >
+              Signup
+            </Link>
           </div>
         </div>
 
@@ -78,34 +91,40 @@ export default function Navbar() {
         <div className="md:hidden absolute top-0 left-0 w-full flex flex-col items-start space-y-4 py-4 bg-gray-100 dark:bg-gray-900 z-10">
           {/* Login & Signup Buttons - Positioned at top left */}
           <div className="absolute top-4 left-4 flex space-x-4">
-            <button className="px-4 py-2 border border-gray-700 dark:border-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition">
+            <Link
+              to="/login"
+              className="px-4 py-2 border border-gray-700 dark:border-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition"
+            >
               Login
-            </button>
-            <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+            </Link>
+            <Link
+              to="/signup"
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+            >
               Signup
-            </button>
+            </Link>
           </div>
 
           {/* Navigation Links - Start after the buttons */}
           <div className="mt-16 flex flex-col items-start space-y-4">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="hover:text-gray-600 dark:hover:text-gray-300 text-lg"
             >
               Home
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/about"
               className="hover:text-gray-600 dark:hover:text-gray-300 text-lg"
             >
               About
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/contact"
               className="hover:text-gray-600 dark:hover:text-gray-300 text-lg"
             >
               Contact
-            </a>
+            </Link>
           </div>
 
           {/* Dark Mode Toggle - Positioned at top right */}
