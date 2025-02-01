@@ -3,28 +3,10 @@ import { Moon, Sun, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
-  const [darkMode, setDarkMode] = useState(() => {
-    return (
-      localStorage.getItem("theme") === "dark" ||
-      (!localStorage.getItem("theme") &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    );
-  });
-
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [darkMode]);
-
   return (
-    <nav className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-md relative">
+    <nav className="absolute top-0 left-0 w-full bg-transparent text-gray-900 shadow-none z-20">
       <div className="max-w-7xl mx-auto px-2 py-4 flex items-center">
         {/* Logo - Pushed to the left */}
         <Link to="/" className="text-2xl font-bold mr-auto">
@@ -50,14 +32,9 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Dark Mode Toggle, Login & Signup Buttons */}
-        <div className="hidden md:flex items-center space-x-4 ml-6">
-          {/* Dark Mode Toggle */}
-          <button
-            onClick={() => setDarkMode((prev) => !prev)}
-            className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 transition"
-          >
-            {darkMode ? <Sun size={22} /> : <Moon size={22} />}
+        <div className="hidden md:flex items-center space-x-6 ml-8">
+          <button className="mx-2 px-5 py-3 bg-[#0040ff] text-white rounded-lg hover:bg-[#E65100] transition font-semibold text-lg hover:cursor-pointer">
+            Login as Student/Staff
           </button>
 
           <div className="">
@@ -88,8 +65,8 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-0 left-0 w-full flex flex-col items-start space-y-4 py-4 bg-gray-100 dark:bg-gray-900 z-10">
-          {/* Login & Signup Buttons - Positioned at top left */}
+        <div className="md:hidden absolute top-0 left-0 w-full flex flex-col items-start space-y-4 py-4 bg-gray-100 z-10">
+          {/* Login Buttons - Positioned at top left */}
           <div className="absolute top-4 left-4 flex space-x-4">
             <Link
               to="/login"
@@ -126,14 +103,6 @@ export default function Navbar() {
               Contact
             </Link>
           </div>
-
-          {/* Dark Mode Toggle - Positioned at top right */}
-          <button
-            onClick={() => setDarkMode((prev) => !prev)}
-            className="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-800 transition"
-          >
-            {darkMode ? <Sun size={22} /> : <Moon size={22} />}
-          </button>
         </div>
       )}
     </nav>

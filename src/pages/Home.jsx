@@ -1,13 +1,25 @@
 const Home = () => (
-  <div className="relative w-screen h-[calc(100vh-4rem)]">
+  <div className="relative w-screen h-screen">
     {/* Background Image with Opacity */}
-    <img className="w-full h-full object-cover opacity-60" src="./landing-img.jpg" alt="landing" />
+    <img className="absolute inset-0 w-full h-full object-cover opacity-90 z-0" src="./landing-img.jpg" alt="landing" />
 
     {/* Overlay Text */}
-    <div className="absolute top-1/3 left-10 text-white">
-      <h1 className="text-7xl font-bold drop-shadow-[2px_2px_4px_black]">Welcome to Bistro SPIT</h1>
+    <div className="absolute top-1/3 left-10 text-white z-10">
+      <h1 className="text-7xl font-bold drop-shadow-[3px_3px_6px_black]">
+        Welcome to Bistro SPIT
+      </h1>
+      <p className="text-3xl mt-2 drop-shadow-[3px_3px_6px_black]">
+        Savor the taste of campus life—one delicious meal at a time!
+      </p>
+
+      <button className="mt-8 px-6 py-3 bg-orange-600 text-white text-2xl font-semibold rounded-lg shadow-lg hover:bg-orange-700 transition-all duration-300 hover: cursor-pointer">
+        Order Now
+      </button>
+
     </div>
   </div>
+
+
 
 );
 export default Home;
