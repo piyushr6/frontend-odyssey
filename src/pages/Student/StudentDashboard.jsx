@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import Sidebar from "../../components/Sidebar";
+import StudentSidebar from "../../components/StudentSidebar";
 import TrackBudgetPage from "./TrackBudgetPage";
 import PastOrdersPage from "./PastOrdersPage";
 
 export default function StudentDashboard() {
   return (
     <div className="flex">
-      <Sidebar />
+      <StudentSidebar />
       <div className="flex-grow p-6">
         <Routes>
           <Route path="track-budget" element={<TrackBudgetPage />} />
