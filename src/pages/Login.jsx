@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -21,15 +22,15 @@ export default function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[var(--color-background)] px-4">
+    <div className="flex items-center justify-center min-h-screen px-4">
       <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold text-center mb-4 text-[var(--color-primary)]">
+        <h2 className="text-2xl font-bold text-center mb-4 text-blue-600">
           Login
         </h2>
 
         <form className="space-y-4" onSubmit={handleLogin}>
           <div>
-            <label className="block font-medium mb-1 text-[var(--color-text)]">
+            <label className="block font-medium mb-1 text-gray-700">
               Email
             </label>
             <input
@@ -38,12 +39,12 @@ export default function Login() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
               required
-              className="w-full p-2 border rounded-md focus:ring focus:ring-[var(--color-primary)]"
+              className="w-full p-2 border rounded-md focus:ring focus:ring-blue-400 cursor-pointer"
             />
           </div>
 
           <div>
-            <label className="block font-medium mb-1 text-[var(--color-text)]">
+            <label className="block font-medium mb-1 text-gray-700">
               Password
             </label>
             <input
@@ -52,16 +53,14 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
               required
-              className="w-full p-2 border rounded-md focus:ring focus:ring-[var(--color-primary)]"
+              className="w-full p-2 border rounded-md focus:ring focus:ring-blue-400 cursor-pointer"
             />
           </div>
 
           <div>
-            <label className="block font-medium mb-1 text-[var(--color-text)]">
-              Role
-            </label>
+            <label className="block font-medium mb-1 text-gray-700">Role</label>
             <select
-              className="w-full p-2 border rounded-md focus:ring focus:ring-[var(--color-primary)]"
+              className="w-full p-2 border rounded-md focus:ring focus:ring-blue-400 cursor-pointer"
               value={role}
               onChange={(e) => setRole(e.target.value)}
             >
@@ -72,11 +71,22 @@ export default function Login() {
 
           <button
             type="submit"
-            className="w-full bg-[var(--color-primary)] text-white py-2 rounded-md hover:bg-[#b01500] transition"
+            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition cursor-pointer"
           >
             Login
           </button>
         </form>
+
+        <p className="text-center mt-4 text-gray-600">
+          Don't have an account?
+          <Link
+            to="/signup"
+            className="text-blue-600 hover:underline cursor-pointer"
+          >
+            {" "}
+            Sign Up
+          </Link>
+        </p>
       </div>
     </div>
   );

@@ -5,35 +5,27 @@ export default function Signup() {
   const [role, setRole] = useState("student");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate(); // Hook to navigate after sign-up
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Save the role and other form data in localStorage after successful sign-up
     localStorage.setItem("role", role);
-    localStorage.setItem("email", email); // Optionally save email
-
-    // You can replace this with actual sign-up logic (API call, etc.)
-    // After successful sign-up, navigate the user to the home page
+    localStorage.setItem("email", email);
     navigate("/");
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[var(--color-background)] px-4">
+    <div className="flex items-center justify-center min-h-screen px-4">
       <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold text-center mb-4 text-[var(--color-primary)]">
+        <h2 className="text-2xl font-bold text-center mb-4 text-blue-600">
           Sign Up
         </h2>
 
         <form className="space-y-4" onSubmit={handleSubmit}>
-          {/* Role Selection */}
           <div>
-            <label className="block font-medium mb-1 text-[var(--color-text)]">
-              Role
-            </label>
+            <label className="block font-medium mb-1 text-gray-700">Role</label>
             <select
-              className="w-full p-2 border rounded-md focus:ring focus:ring-[var(--color-primary)]"
+              className="w-full p-2 border rounded-md focus:ring focus:ring-blue-400 cursor-pointer"
               value={role}
               onChange={(e) => setRole(e.target.value)}
             >
@@ -42,51 +34,47 @@ export default function Signup() {
             </select>
           </div>
 
-          {/* Email Input */}
           <div>
-            <label className="block font-medium mb-1 text-[var(--color-text)]">
+            <label className="block font-medium mb-1 text-gray-700">
               Email
             </label>
             <input
               type="email"
               placeholder="Enter your email"
               required
-              className="w-full p-2 border rounded-md focus:ring focus:ring-[var(--color-primary)]"
+              className="w-full p-2 border rounded-md focus:ring focus:ring-blue-400 cursor-pointer"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
-          {/* Password Input */}
           <div>
-            <label className="block font-medium mb-1 text-[var(--color-text)]">
+            <label className="block font-medium mb-1 text-gray-700">
               Password
             </label>
             <input
               type="password"
               placeholder="Enter your password"
               required
-              className="w-full p-2 border rounded-md focus:ring focus:ring-[var(--color-primary)]"
+              className="w-full p-2 border rounded-md focus:ring focus:ring-blue-400 cursor-pointer"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
-          {/* Signup Button */}
           <button
             type="submit"
-            className="w-full bg-[var(--color-primary)] text-white py-2 rounded-md hover:bg-[#b01500] transition"
+            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition cursor-pointer"
           >
             Sign Up
           </button>
         </form>
 
-        {/* Redirect to Login */}
-        <p className="text-center text-sm mt-4 text-[var(--color-text)]">
+        <p className="text-center text-sm mt-4 text-gray-600">
           Already have an account?
           <Link
             to="/login"
-            className="text-[var(--color-primary)] hover:underline ml-1"
+            className="text-blue-600 hover:underline ml-1 cursor-pointer"
           >
             Login
           </Link>
