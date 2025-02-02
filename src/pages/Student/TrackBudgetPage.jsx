@@ -50,25 +50,25 @@ export default function TrackBudgetPage() {
          <div className="mb-8 flex justify-between items-center">
             <div className="flex space-x-4">
                <button
-                  className="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:border hover:border-black"
+                  className="bg-indigo-600 hover:cursor-pointer text-white py-2 px-4 rounded-lg hover:border hover:border-black"
                   onClick={() => handleFilter("All")}
                >
                   All Categories
                </button>
                <button
-                  className="bg-gray-300 text-gray-800 py-2 px-4 rounded-lg hover:border hover:border-black"
+                  className="bg-gray-300 hover:cursor-pointer text-gray-800 py-2 px-4 rounded-lg hover:border hover:border-black"
                   onClick={() => handleFilter("Snacks")}
                >
                   Snacks
                </button>
                <button
-                  className="bg-gray-300 text-gray-800 py-2 px-4 rounded-lg hover:border hover:border-black"
+                  className="bg-gray-300 hover:cursor-pointer text-gray-800 py-2 px-4 rounded-lg hover:border hover:border-black"
                   onClick={() => handleFilter("Beverages")}
                >
                   Beverages
                </button>
                <button
-                  className="bg-gray-300 text-gray-800 py-2 px-4 rounded-lg hover:border hover:border-black"
+                  className="bg-gray-300 hover:cursor-pointer text-gray-800 py-2 px-4 rounded-lg hover:border hover:border-black"
                   onClick={() => handleFilter("Lunch")}
                >
                   Lunch
@@ -76,7 +76,7 @@ export default function TrackBudgetPage() {
             </div>
             <div>
                <button
-                  className="bg-green-600 text-white py-2 px-4 rounded-lg hover:opacity-80"
+                  className="bg-green-600 hover:cursor-pointer text-white py-2 px-4 rounded-lg hover:opacity-80"
                   onClick={() => handleSort(sortOrder === "asc" ? "desc" : "asc")}
                >
                   Sort by Amount ({sortOrder === "asc" ? "Ascending" : "Descending"})

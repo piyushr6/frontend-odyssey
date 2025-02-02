@@ -130,7 +130,7 @@ export default function UpdateMenu() {
                     <td className="px-4 py-2">
                       <button
                         className={`px-3 py-1 rounded text-sm ${item.available
-                          ? "bg-green-500 text-white"
+                          ? "bg-green-500 hover:cursor-pointer text-white"
                           : "bg-gray-500 text-white"
                           }`}
                         onClick={() => toggleAvailability(item.id)}
@@ -140,7 +140,7 @@ export default function UpdateMenu() {
                     </td>
                     <td className="px-4 py-2">
                       <button
-                        className="bg-red-500 text-white px-3 py-1 rounded text-sm"
+                        className="bg-red-500 hover:cursor-pointer text-white px-3 py-1 rounded text-sm"
                         onClick={() => removeMenuItem(item.id)}
                       >
                         Remove
@@ -186,7 +186,7 @@ export default function UpdateMenu() {
             <option value="Beverages">Beverages</option>
           </select>
           <button
-            className="bg-blue-600 text-white px-4 py-2 rounded w-full"
+            className="bg-blue-600 hover:cursor-pointer hover:opacity-90 text-white px-4 py-2 rounded w-full"
             onClick={addMenuItem}
           >
             Add

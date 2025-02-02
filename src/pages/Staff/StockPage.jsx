@@ -81,9 +81,8 @@ export default function StockPage() {
             {filteredStock.map((item) => (
               <div
                 key={item.id}
-                className={`grid grid-cols-5 gap-4 items-center py-2 ${
-                  item.quantity < 10 ? "bg-red-100" : ""
-                } border-b`}
+                className={`grid grid-cols-5 gap-4 items-center py-2 ${item.quantity < 10 ? "bg-red-100" : ""
+                  } border-b`}
               >
                 <span>
                   {item.item} ({item.unit})
@@ -106,7 +105,7 @@ export default function StockPage() {
                 />
                 <span>₹{item.quantity * item.price}</span>
                 <button
-                  className="bg-red-500 text-white px-3 py-1 rounded text-sm"
+                  className="bg-red-500 text-white hover:cursor-pointer px-3 py-1 rounded text-sm"
                   onClick={() => removeStockItem(item.id)}
                 >
                   Remove
@@ -158,7 +157,7 @@ export default function StockPage() {
           />
         </div>
         <button
-          className="mt-3 bg-blue-600 text-white px-4 py-2 rounded w-full"
+          className="mt-3 hover:cursor-pointer hover:opacity-90 bg-blue-600 text-white px-4 py-2 rounded w-full"
           onClick={addStockItem}
         >
           Add Stock

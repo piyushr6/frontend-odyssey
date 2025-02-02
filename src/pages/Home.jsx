@@ -30,7 +30,7 @@ function Home() {
             Order food, track your expenses, and manage your meals effortlessly.
           </p>
           <Link to="/order-menu">
-            <button className="bg-primary text-white text-lg font-semibold py-3 px-8 rounded-lg hover:bg-[#b01500] transition hover:cursor-pointer">
+            <button className="bg-primary text-white text-lg font-semibold py-3 px-8 rounded-lg hover:bg-[#005bb0] transition hover:cursor-pointer">
               Order Now
             </button>
           </Link>
@@ -91,7 +91,7 @@ function Home() {
 
       {/* Meal Schedule Section */}
       <section className="py-20 bg-secondary text-text text-center">
-        <h2 className="text-4xl font-bold mb-6 text-primary">
+        <h2 className="text-4xl font-bold mb-6 text-red-600">
           Today's Meal Schedule
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">

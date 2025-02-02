@@ -17,14 +17,14 @@ const FoodCard = ({ image, name, price }) => {
             <p className="text-gray-600 mb-4">Price: ₹{price}</p>
             <div className="flex items-center gap-4">
                <button
-                  className="p-2 border border-gray-300 rounded-full"
+                  className="p-2 hover:cursor-pointer border border-gray-300 rounded-full"
                   onClick={decreaseQuantity}
                >
                   <Minus className="w-4 h-4" />
                </button>
                <span className="text-lg font-semibold">{quantity}</span>
                <button
-                  className="p-2 border border-gray-300 rounded-full"
+                  className="p-2 hover:cursor-pointer border border-gray-300 rounded-full"
                   onClick={increaseQuantity}
                >
                   <Plus className="w-4 h-4" />

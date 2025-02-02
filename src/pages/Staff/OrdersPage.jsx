@@ -79,7 +79,7 @@ export default function ManageOrders() {
         {["All", "Pending", "Completed", "Canceled"].map((status) => (
           <button
             key={status}
-            className={`px-4 py-2 rounded ${filter === status ? "bg-blue-600 text-white" : "bg-gray-200"
+            className={`px-4 py-2 hover:cursor-pointer rounded ${filter === status ? "bg-blue-600 text-white" : "bg-gray-200"
               }`}
             onClick={() => setFilter(status)}
           >
@@ -122,7 +122,7 @@ export default function ManageOrders() {
                   <option value="Canceled">Canceled</option>
                 </select>
                 <button
-                  className="bg-red-500 text-white px-3 py-1 rounded text-sm"
+                  className="bg-red-500 hover:cursor-pointer text-white px-3 py-1 rounded text-sm"
                   onClick={() => removeOrder(order.id)}
                 >
                   Remove
@@ -171,7 +171,7 @@ export default function ManageOrders() {
           />
         </div>
         <button
-          className="mt-3 bg-blue-600 text-white px-4 py-2 rounded w-full"
+          className="mt-3 hover:cursor-pointer hover:opacity-90 bg-blue-600 text-white px-4 py-2 rounded w-full"
           onClick={addOrder}
         >
           Add Order

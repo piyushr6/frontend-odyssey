@@ -57,7 +57,7 @@ const OrderMenu = () => {
          <div className="mt-8">
             <button
                onClick={() => alert("Order placed successfully!")}
-               className="px-6 py-3 bg-orange-600 text-white text-2xl font-semibold rounded-lg hover:bg-orange-700 transition-all duration-300 cursor-pointer"
+               className="px-6 hover:cursor-pointer py-3 bg-orange-600 text-white text-2xl font-semibold rounded-lg hover:bg-orange-700 transition-all duration-300 cursor-pointer"
             >
                Order Now
             </button>
