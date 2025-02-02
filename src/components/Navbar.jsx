@@ -17,25 +17,25 @@ export default function Navbar() {
       <>
         <Link
           to="/"
-          className="hover:text-gray-600 dark:hover:text-gray-300 text-[var(--color-primary)]"
+          className="hover:text-gray-600 dark:hover:text-gray-300 text-[var(--color-primary)] hover:underline"
         >
           Home
         </Link>
         <Link
           to="/student"
-          className="hover:text-gray-600 dark:hover:text-gray-300 text-[var(--color-primary)]"
+          className="hover:text-gray-600 dark:hover:text-gray-300 text-[var(--color-primary)] hover:underline"
         >
           Student Dashboard
         </Link>
         <Link
           to="/staff"
-          className="hover:text-gray-600 dark:hover:text-gray-300 text-[var(--color-primary)]"
+          className="hover:text-gray-600 dark:hover:text-gray-300 text-[var(--color-primary)] hover:underline"
         >
           Staff Dashboard
         </Link>
         <Link
           to="/order-menu"
-          className="hover:text-gray-600 dark:hover:text-gray-300 text-[var(--color-primary)]"
+          className="hover:text-gray-600 dark:hover:text-gray-300 text-[var(--color-primary)] hover:underline"
         >
           Order Food
         </Link>

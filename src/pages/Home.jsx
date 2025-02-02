@@ -40,7 +40,7 @@ function Home() {
       {/* Features Section */}
       <section className="py-20 px-8 bg-background">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-primary">Why Choose Us?</h2>
+          <h2 className="text-4xl font-bold text-primary">Why Us?</h2>
           <p className="text-lg text-text max-w-xl mx-auto mt-3">
             We make meal ordering and management easy for students, staff, and
             mess staff.
@@ -72,7 +72,7 @@ function Home() {
           ].map((card, index) => (
             <div
               key={index}
-              className="bg-white p-8 shadow-lg rounded-xl text-center border border-secondary"
+              className="bg-white p-8 shadow-lg rounded-xl text-center border border-secondary transition-all duration-300 hover:shadow-2xl hover:shadow-secondary"
             >
               <h3 className="text-2xl font-semibold text-primary mb-4">
                 {card.title}
@@ -102,7 +102,7 @@ function Home() {
           ].map((meal, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-lg border border-primary"
+              className="bg-white p-6 rounded-lg shadow-lg border border-primary transition-all duration-300 hover:shadow-2xl hover:shadow-gray"
             >
               <h3 className="text-xl font-semibold text-primary mb-2">
                 {meal.time}
